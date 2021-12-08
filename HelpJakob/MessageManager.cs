@@ -8,11 +8,7 @@ namespace HelpJakob
 {
     public abstract class MessageManager
     {
-        private HTMLConverter htmlConverter = new HTMLConverter();
-        public virtual void SendMessage(Message m, bool isHTML)
-        {
-            if (isHTML)
-                m.Body = htmlConverter.ConvertBodyToHTML(m.Body);
-        }
+        public HTMLConverter htmlConverter = new HTMLConverter();
+        public abstract void SendMessage(Message m, bool isHTML);
     }
 }

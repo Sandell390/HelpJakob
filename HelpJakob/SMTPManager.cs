@@ -8,5 +8,11 @@ namespace HelpJakob
 {
     public class SMTPManager : MessageManager
     {
+        
+        public override void SendMessage(Message m, bool isHTML)
+        {
+            if (isHTML)
+                m.Body = htmlConverter.ConvertBodyToHTML(m.Body);
+        }
     }
 }
